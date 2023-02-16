@@ -2714,7 +2714,7 @@ GameObject:
   - component: {fileID: 237983252538383167}
   - component: {fileID: 7446575491728743525}
   m_Layer: 0
-  m_Name: Hero Knight Male
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

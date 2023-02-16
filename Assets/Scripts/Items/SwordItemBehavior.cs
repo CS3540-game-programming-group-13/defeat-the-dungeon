@@ -5,13 +5,16 @@ using UnityEngine;
 public class SwordItemBehavior : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField]
     private BoxCollider sword;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        sword = GameObject.FindGameObjectWithTag("Sword").GetComponent<BoxCollider>();
-        Debug.Log("SWORD: " + sword);
+        if(sword == null)
+        {
+            sword = GameObject.FindGameObjectWithTag("Sword").GetComponent<BoxCollider>();
+        }
     }
 
     void Update()

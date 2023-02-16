@@ -282,6 +282,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &808241426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+  m_PrefabInstance: {fileID: 2034417007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +299,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -362,7 +368,7 @@ Transform:
   m_LocalRotation: {x: 0.2248496, y: -0.013335755, z: 0.0030744835, w: 0.9742974}
   m_LocalPosition: {x: 0.43, y: 2.92, z: -3.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -379,6 +385,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47224017b840dc74d97dbd5bcad60de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1773428102 &963194230
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0.43, y: 2.92, z: -3.69}
+  m_RotationAtRest: {x: 25.990541, y: -1.5684708, z: -0.00039239982}
+  m_TranslationOffsets:
+  - {x: 0.43, y: 3.15, z: -1.942}
+  m_RotationOffsets:
+  - {x: 25.990553, y: -1.568471, z: -0.0003923997}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 808241426}
+    weight: 1
 --- !u!1 &1281609355
 GameObject:
   m_ObjectHideFlags: 0

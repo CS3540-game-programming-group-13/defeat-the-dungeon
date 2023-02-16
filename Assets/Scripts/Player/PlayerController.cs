@@ -6,18 +6,26 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed = 10;
-    private CharacterController controller;
     public float jumpHeight = 10;
     public float gravity = 9.81f;
     public float airControl = 5;
+    private float pitch = 0;
     private Vector3 input, moveDirection;
+    private CharacterController controller;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
+    {
+        UpdatePosition();
+    }
+
+    private void UpdatePosition()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -45,4 +53,5 @@ public class PlayerController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
+
 }
