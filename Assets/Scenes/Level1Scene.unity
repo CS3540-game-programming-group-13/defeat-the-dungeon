@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &85848647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162860, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+  m_PrefabInstance: {fileID: 2034417007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &85848653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85848647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e14f581285b42b8b89fdaf2f746be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &230274742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,6 +495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Hero_Knight_Male
       objectReference: {fileID: 0}
+    - target: {fileID: 162860, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -492,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.16
+      value: -1.748
       objectReference: {fileID: 0}
     - target: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -521,6 +542,14 @@ PrefabInstance:
     - target: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9566420, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9566420, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 911376219156104142, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_LocalScale.x

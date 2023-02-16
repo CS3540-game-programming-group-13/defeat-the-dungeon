@@ -14,9 +14,10 @@ public class SlashContact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
+    // in-contact with Sword go to destroy crate
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Sword"))
@@ -25,6 +26,7 @@ public class SlashContact : MonoBehaviour
         }
     }
 
+    // for multiple crates, destroy when in contact with Sword
     void DestroyCrate()
     {
         Instantiate(crateObject, transform.position, transform.rotation);

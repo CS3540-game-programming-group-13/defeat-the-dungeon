@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1.8
     - serializedVersion: 16
-      name: mixamo.com
+      name: Character_Slash
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
@@ -73,7 +73,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
