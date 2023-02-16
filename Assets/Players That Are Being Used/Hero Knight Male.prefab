@@ -2797,7 +2797,7 @@ GameObject:
   - component: {fileID: -5220153235359742538}
   - component: {fileID: 3488816080381231197}
   m_Layer: 0
-  m_Name: Character_Hero_Knight_Male
+  m_Name: Hero Knight Male
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4884,9 +4884,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223808295647508998}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
-  m_LocalPosition: {x: 23.9, y: -53.9, z: 8.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.9659258, y: -0.25881922, z: -0.000000089406974, w: 0.00000003911555}
+  m_LocalPosition: {x: 1.0386777, y: 1.8999306, z: -0.11617432}
+  m_LocalScale: {x: 0.010000004, y: 0.010000001, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 496550}
