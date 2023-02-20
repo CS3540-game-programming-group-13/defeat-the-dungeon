@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     private float pitch = 0;
     private Vector3 input, moveDirection;
     private CharacterController controller;
+    private Animator animator;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+        animator.SetFloat("moveSpeed", moveVertical);
     }
 
 }
