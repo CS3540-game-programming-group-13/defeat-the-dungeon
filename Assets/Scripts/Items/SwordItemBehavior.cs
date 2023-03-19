@@ -8,6 +8,8 @@ public class SwordItemBehavior : MonoBehaviour
     [SerializeField]
     private BoxCollider sword;
 
+    public AudioClip swingSFX;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,7 @@ public class SwordItemBehavior : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("playerSlash");
+            AudioSource.PlayClipAtPoint(swingSFX, transform.position);
         }
     }
 

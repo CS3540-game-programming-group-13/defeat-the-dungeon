@@ -21,7 +21,6 @@ public class EnemyAnimBehavior : MonoBehaviour
     public GameObject player;
     public AudioClip goblinDeathSFX;
 
-
     GameObject[] wanderPoints;
     Vector3 nextDestination;
     Animator anim;
