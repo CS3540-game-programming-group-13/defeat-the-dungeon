@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 4847169567718130592}
   - component: {fileID: 3257179757800379926}
   - component: {fileID: 5918227624589872371}
+  - component: {fileID: 6037450013216679152}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -529,6 +530,7 @@ MonoBehaviour:
   enemySpeed: 5
   player: {fileID: 0}
   goblinDeathSFX: {fileID: 8300000, guid: 515c8007252e17848a9c571b02bf8bb8, type: 3}
+  weaponTip: {fileID: 1725391413}
 --- !u!136 &3257179757800379926
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -557,6 +559,19 @@ CapsuleCollider:
   m_Height: 2.293512
   m_Direction: 1
   m_Center: {x: 0, y: 1.15, z: 0}
+--- !u!114 &6037450013216679152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315d8ed78966d74ea04d1bd8fa3c767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!1 &114958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,6 +4858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Goblin_Spear_01
       objectReference: {fileID: 0}
+    - target: {fileID: 185776, guid: 843cd7f8f2fb4d1488ab944cd5e973d8, type: 3}
+      propertyPath: m_TagString
+      value: EnemyWeapon
+      objectReference: {fileID: 0}
     - target: {fileID: 401216, guid: 843cd7f8f2fb4d1488ab944cd5e973d8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4908,5 +4927,10 @@ PrefabInstance:
 --- !u!4 &1725147333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401216, guid: 843cd7f8f2fb4d1488ab944cd5e973d8, type: 3}
+  m_PrefabInstance: {fileID: 1725282181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1725391413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 185776, guid: 843cd7f8f2fb4d1488ab944cd5e973d8, type: 3}
   m_PrefabInstance: {fileID: 1725282181}
   m_PrefabAsset: {fileID: 0}

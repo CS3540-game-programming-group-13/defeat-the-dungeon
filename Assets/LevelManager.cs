@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool isGameOver = false;
+    public static LevelManager instance { get; set; }
 
     [SerializeField]
     private float levelDuration = 100.0f;
@@ -19,12 +19,17 @@ public class LevelManager : MonoBehaviour
 
     private float enemyCount;
     private float countDown;
+    private bool isGameOver = false;
 
     private void Start()
     {
         isGameOver = false;
         countDown = levelDuration;
         enemyCount = 1; // TODO: get number of game objects with tag 'enemy'
+        if(instance == null)
+        {
+            instance = this;
+        }
     }
 
     private void Update()
