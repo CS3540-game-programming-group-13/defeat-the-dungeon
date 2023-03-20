@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 4847169567718130592}
   - component: {fileID: 3257179757800379926}
   - component: {fileID: 5918227624589872371}
-  - component: {fileID: 6037450013216679152}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -559,19 +558,6 @@ CapsuleCollider:
   m_Height: 2.293512
   m_Direction: 1
   m_Center: {x: 0, y: 1.15, z: 0}
---- !u!114 &6037450013216679152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f315d8ed78966d74ea04d1bd8fa3c767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!1 &114958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,3 +4920,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 185776, guid: 843cd7f8f2fb4d1488ab944cd5e973d8, type: 3}
   m_PrefabInstance: {fileID: 1725282181}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7814652271094155984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725391413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315d8ed78966d74ea04d1bd8fa3c767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20

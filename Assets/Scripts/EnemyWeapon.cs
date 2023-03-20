@@ -5,16 +5,20 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour
 {
     public int damage = 20;
-    private bool wasActive = false;
     private bool shouldApplyDamage = true;
+    private bool appliedDamage = false;
 
-    private void Update()
+    void Update()
     {
-        if(gameObject.activeInHierarchy && !wasActive)
+        if (gameObject.activeInHierarchy && !appliedDamage)
         {
             shouldApplyDamage = true;
         }
-        wasActive = gameObject.activeInHierarchy;
+    }
+
+    private void OnEnable()
+    {
+        appliedDamage = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +27,7 @@ public class EnemyWeapon : MonoBehaviour
         {
             other.GetComponent<PlayerStats>().TakeDamage(damage);
             shouldApplyDamage = false;
+            appliedDamage = true;
         }
     }
 }

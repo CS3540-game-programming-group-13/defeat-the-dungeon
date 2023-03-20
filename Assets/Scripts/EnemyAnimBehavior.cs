@@ -21,6 +21,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     public GameObject player;
     public AudioClip goblinDeathSFX;
     public GameObject weaponTip;
+    public static int enemyCount = 0;
 
     GameObject[] wanderPoints;
     Vector3 nextDestination;
@@ -32,8 +33,9 @@ public class EnemyAnimBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyCount++;
         wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
-
+        DisableWeaponTip();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         Initialize();
@@ -189,5 +191,19 @@ public class EnemyAnimBehavior : MonoBehaviour
     public void DisableWeaponTip()
     {
         weaponTip.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        enemyCount--;
+        if (enemyCount <= 0)
+        {
+            Debug.Log("You win!");
+            LevelManager instance = LevelManager.instance;
+            if (instance)
+            {
+                LevelManager.instance.LevelBeat();
+            }
+        }
     }
 }
