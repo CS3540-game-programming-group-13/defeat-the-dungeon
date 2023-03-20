@@ -20,6 +20,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     public float enemySpeed = 5;
     public GameObject player;
     public AudioClip goblinDeathSFX;
+    public GameObject weaponTip;
 
     GameObject[] wanderPoints;
     Vector3 nextDestination;
@@ -35,7 +36,6 @@ public class EnemyAnimBehavior : MonoBehaviour
 
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-
         Initialize();
     }
 
@@ -73,8 +73,6 @@ public class EnemyAnimBehavior : MonoBehaviour
 
     void UpdatePatrolState()
     {
-        print("Patrolling!");
-
         anim.SetInteger("goblinState", 1);
 
         if (Vector3.Distance(transform.position, nextDestination) < 3)
@@ -95,8 +93,6 @@ public class EnemyAnimBehavior : MonoBehaviour
     }
     void UpdateChaseState()
     {
-        print("Chasing!");
-
         anim.SetInteger("goblinState", 2);
 
         nextDestination = player.transform.position;
@@ -119,8 +115,6 @@ public class EnemyAnimBehavior : MonoBehaviour
     }
     void UpdateAttackState()
     {
-        print("Attacking!");
-
         nextDestination = player.transform.position;
 
         if (distanceToPlayer <= attackDistance)
@@ -144,7 +138,6 @@ public class EnemyAnimBehavior : MonoBehaviour
     void UpdateDeadState()
     {
         isAlive = false;
-        print("Died");
 
         anim.SetInteger("goblinState", 4);
 
@@ -186,5 +179,15 @@ public class EnemyAnimBehavior : MonoBehaviour
         {
             UpdateDeadState();
         }
+    }
+    
+    public void EnableWeaponTip()
+    {
+        weaponTip.SetActive(true);
+    }
+
+    public void DisableWeaponTip()
+    {
+        weaponTip.SetActive(false);
     }
 }

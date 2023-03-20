@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - Enemy
   - WanderPoint
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX
