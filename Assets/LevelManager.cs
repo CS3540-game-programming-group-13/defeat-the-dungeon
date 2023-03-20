@@ -1,48 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public float levelDuration = 100.0f;
-    public Text timerText;
-    public Text gameText;
-    public AudioClip gameOverSFX;
-    public AudioClip yaySFX;
-    public string nextLevel;
-    public string sameLevel;
-    public float pickupCount;
-    public float displayCount;
-    
-
     public static bool isGameOver = false;
 
-    float countDown;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float levelDuration = 100.0f;
+    [SerializeField]
+    private Text gameText;
+    [SerializeField]
+    private AudioClip gameOverSFX;
+    [SerializeField]
+    private AudioClip yaySFX;
+    [SerializeField]
+    private string nextLevel;
+
+    private float enemyCount;
+    private float countDown;
+
+    private void Start()
     {
         isGameOver = false;
         countDown = levelDuration;
-        SetTimerText();
+        enemyCount = 1; // TODO: get number of game objects with tag 'enemy'
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(!isGameOver){
-        if(countDown > 0){
-        countDown -= Time.deltaTime;
-        }
-        else{
-            countDown = 0.00f;
-            LevelLost();
-        }
-        if(pickupCount <= 0){
-            LevelBeat();
-        }
-        SetTimerText();
+        if(!isGameOver) {
+            if(countDown > 0) {
+                countDown -= Time.deltaTime;
+            }
+            else {
+                countDown = 0.00f;
+                LevelLost();
+            }
+            if(enemyCount <= 0) {
+                LevelBeat();
+            }
         }
 
     }
@@ -51,26 +48,25 @@ public class LevelManager : MonoBehaviour
         gameText.text = "GAME OVER!";
         gameText.gameObject.SetActive(true);
         Invoke("LoadSameLevel", 2);
-
     }
     
     private void LevelBeat(){
         isGameOver = true;
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
-        Invoke("LoadLevelNext", 2);
-
+        if (!string.IsNullOrEmpty(nextLevel))
+        {
+            Invoke("LoadNextLevel", 2);
+        }
     }
-    void LoadLevelNext()
+
+    void LoadNextLevel()
     {
         SceneManager.LoadScene(nextLevel);
     }
+
     void LoadSameLevel()
     {
-        SceneManager.LoadScene(sameLevel);
-    }
-    void SetTimerText()
-    {
-        timerText.text = countDown.ToString("0.00");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
