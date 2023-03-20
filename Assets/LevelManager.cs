@@ -16,8 +16,6 @@ public class LevelManager : MonoBehaviour
     private AudioClip yaySFX;
     [SerializeField]
     private string nextLevel;
-
-    private float enemyCount;
     private float countDown;
     private bool isGameOver = false;
 
@@ -25,8 +23,7 @@ public class LevelManager : MonoBehaviour
     {
         isGameOver = false;
         countDown = levelDuration;
-        enemyCount = 1; // TODO: get number of game objects with tag 'enemy'
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -42,9 +39,6 @@ public class LevelManager : MonoBehaviour
                 countDown = 0.00f;
                 LevelLost();
             }
-            if(enemyCount <= 0) {
-                LevelBeat();
-            }
         }
 
     }
@@ -55,7 +49,7 @@ public class LevelManager : MonoBehaviour
         Invoke("LoadSameLevel", 2);
     }
     
-    private void LevelBeat(){
+    public void LevelBeat(){
         isGameOver = true;
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
@@ -73,5 +67,10 @@ public class LevelManager : MonoBehaviour
     void LoadSameLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public bool IsGameOver()
+    {
+        return isGameOver;
     }
 }

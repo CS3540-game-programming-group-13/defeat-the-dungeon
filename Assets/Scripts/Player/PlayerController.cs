@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        UpdatePosition();
+        if (!LevelManager.instance.IsGameOver())
+        {
+            UpdatePosition();
+        }
     }
 
     private void UpdatePosition()
