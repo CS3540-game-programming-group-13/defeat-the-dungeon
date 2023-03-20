@@ -26,6 +26,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     Animator anim;
     float distanceToPlayer;
     float elapsedTime = 0;
+    bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -41,24 +42,27 @@ public class EnemyAnimBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        switch (currentState)
+        if (isAlive)
         {
-            case FSMStates.Patrol:
-                UpdatePatrolState();
-                break;
-            case FSMStates.Chase:
-                UpdateChaseState();
-                break;
-            case FSMStates.Attack:
-                UpdateAttackState();
-                break;
-            case FSMStates.Dead:
-                UpdateDeadState();
-                break;
-        }
+            distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            switch (currentState)
+            {
+                case FSMStates.Patrol:
+                    UpdatePatrolState();
+                    break;
+                case FSMStates.Chase:
+                    UpdateChaseState();
+                    break;
+                case FSMStates.Attack:
+                    UpdateAttackState();
+                    break;
+                case FSMStates.Dead:
+                    UpdateDeadState();
+                    break;
+            }
 
-        elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
+        }
     }
 
     private void Initialize()
@@ -139,6 +143,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     }
     void UpdateDeadState()
     {
+        isAlive = false;
         print("Died");
 
         anim.SetInteger("goblinState", 4);
@@ -177,7 +182,7 @@ public class EnemyAnimBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Sword"))
+        if (other.CompareTag("Sword") && isAlive)
         {
             UpdateDeadState();
         }
