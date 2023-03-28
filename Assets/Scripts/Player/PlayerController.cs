@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
-        animator.SetFloat("moveSpeed", moveVertical);
+        animator.SetInteger("moveSpeed", (int)(Mathf.Abs(moveVertical) + Mathf.Abs(moveHorizontal)));
     }
 
 }

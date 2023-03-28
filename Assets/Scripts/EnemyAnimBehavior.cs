@@ -20,6 +20,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     public float enemySpeed = 5;
     public GameObject player;
     public AudioClip goblinDeathSFX;
+    public AudioClip goblinStabSFX;
     public GameObject weaponTip;
     public static int enemyCount = 0;
 
@@ -134,8 +135,13 @@ public class EnemyAnimBehavior : MonoBehaviour
 
         FaceTarget(nextDestination);
 
-        anim.SetInteger("goblinState", 3);
+        if (elapsedTime >= 2.5)
+        {
+            AudioSource.PlayClipAtPoint(goblinStabSFX, transform.position);
+            elapsedTime = 0;
+        }
 
+        anim.SetInteger("goblinState", 3);
     }
     void UpdateDeadState()
     {
@@ -193,17 +199,17 @@ public class EnemyAnimBehavior : MonoBehaviour
         weaponTip.SetActive(false);
     }
 
-    private void OnDestroy()
-    {
-        enemyCount--;
-        if (enemyCount <= 0)
-        {
-            Debug.Log("You win!");
-            LevelManager instance = LevelManager.instance;
-            if (instance)
-            {
-                LevelManager.instance.LevelBeat();
-            }
-        }
-    }
+    //private void OnDestroy()
+    //{
+    //    enemyCount--;
+    //    if (enemyCount <= 0)
+    //    {
+    //        Debug.Log("You win!");
+    //        LevelManager instance = LevelManager.instance;
+    //        if (instance)
+    //        {
+    //            LevelManager.instance.LevelBeat();
+    //        }
+    //    }
+    //}
 }
