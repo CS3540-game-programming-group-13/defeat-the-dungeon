@@ -528,7 +528,7 @@ MonoBehaviour:
   chaseDistance: 6
   enemySpeed: 5
   player: {fileID: 0}
-  goblinDeathSFX: {fileID: 8300000, guid: 515c8007252e17848a9c571b02bf8bb8, type: 3}
+  goblinDeathSFX: {fileID: 8300000, guid: b26927310e4d2d74b8d31e5c3ac2ecb7, type: 3}
   goblinStabSFX: {fileID: 8300000, guid: 050c367fa2c396d42b7399e31f19b26e, type: 3}
   weaponTip: {fileID: 1725391413}
 --- !u!136 &3257179757800379926

@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats instance { get; set; }
+
     public int startingHealth = 100;
     private int currentHealth = 100;
     public AudioClip playerHurtSFX;
+    public AudioClip playerHealSFX;
     public AudioClip playerDeadSFX;
 
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         currentHealth = startingHealth;
     }
 
@@ -24,5 +31,16 @@ public class PlayerStats : MonoBehaviour
             AudioSource.PlayClipAtPoint(playerDeadSFX, transform.position);
             LevelManager.instance.LevelLost();
         }
+    }
+
+    public void Heal(int health)
+    {
+        AudioSource.PlayClipAtPoint(playerHealSFX, transform.position);
+        currentHealth += health;
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+        Debug.Log("Health: " + currentHealth);
     }
 }
