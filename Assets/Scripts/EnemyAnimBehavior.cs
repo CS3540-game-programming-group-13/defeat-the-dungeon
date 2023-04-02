@@ -35,10 +35,13 @@ public class EnemyAnimBehavior : MonoBehaviour
     float distanceToPlayer;
     float elapsedTime = 0;
     bool isAlive = true;
+    Transform eyes;
+    [SerializeField]
+    private float fieldOfView = 75f;
 
-    // Start is called before the first frame update
     void Start()
     {
+        eyes = transform.GetChild(0);
         enemyCount++;
         if(wanderPoints.Length == 0)
         {
@@ -95,12 +98,13 @@ public class EnemyAnimBehavior : MonoBehaviour
     void UpdatePatrolState()
     {
         anim.SetInteger("goblinState", 1);
+        bool canSeePlayer = IsPlayerInClearFOV();
 
         if (Vector3.Distance(transform.position, nextDestination) < 3)
         {
             FindNextPoint();
         }
-        else if (distanceToPlayer <= chaseDistance)
+        else if (distanceToPlayer <= chaseDistance && canSeePlayer)
         {
             currentState = FSMStates.Chase;
         }
@@ -211,6 +215,27 @@ public class EnemyAnimBehavior : MonoBehaviour
     public void DisableWeaponTip()
     {
         weaponTip.SetActive(false);
+    }
+
+    private bool IsPlayerInClearFOV()
+    {
+        Vector3 playerHeadPos = player.transform.position;
+        playerHeadPos.y = eyes.position.y;
+        Vector3 directionToPlayer = playerHeadPos - eyes.position;
+        float angle = Vector3.Angle(directionToPlayer, eyes.forward);
+
+        if (angle <= fieldOfView)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(eyes.position, directionToPlayer, out hit, chaseDistance))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     //private void OnDestroy()

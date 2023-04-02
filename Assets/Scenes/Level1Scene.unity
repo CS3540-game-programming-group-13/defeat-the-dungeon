@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Goblin_Warrior_Male
       objectReference: {fileID: 0}
+    - target: {fileID: 112422, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 407186, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
       propertyPath: m_RootOrder
       value: 1
