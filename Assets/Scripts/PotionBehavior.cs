@@ -22,8 +22,8 @@ public class PotionBehavior : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerInventory.instance.AddPotion();
+            AudioSource.PlayClipAtPoint(potionCollectSFX, transform.position);
+            Destroy(gameObject);
         }
-        AudioSource.PlayClipAtPoint(potionCollectSFX, transform.position);
-        Destroy(gameObject);
     }
 }

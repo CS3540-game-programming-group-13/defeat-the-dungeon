@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3623584961925750167}
   - component: {fileID: 3651798994290057330}
   - component: {fileID: -8243820347600802826}
+  - component: {fileID: 438139963}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -129,3 +130,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &438139963
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3651798994642110163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: cd445d4fe0b37de469649f2e80027349, type: 3}
