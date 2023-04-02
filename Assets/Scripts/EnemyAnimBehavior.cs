@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAnimBehavior : MonoBehaviour
 {
@@ -17,15 +18,19 @@ public class EnemyAnimBehavior : MonoBehaviour
 
     public float attackDistance = 2;
     public float chaseDistance = 6;
-    public float enemySpeed = 5;
     public GameObject player;
     public AudioClip goblinDeathSFX;
     public AudioClip goblinStabSFX;
     public GameObject weaponTip;
     public static int enemyCount = 0;
-
+    [SerializeField]
+    private float patrolSpeed = 1f;
+    [SerializeField]
+    private float chaseSpeed = 3.5f;
+    [SerializeField]
     GameObject[] wanderPoints;
     Vector3 nextDestination;
+    private NavMeshAgent agent;
     Animator anim;
     float distanceToPlayer;
     float elapsedTime = 0;
@@ -35,11 +40,24 @@ public class EnemyAnimBehavior : MonoBehaviour
     void Start()
     {
         enemyCount++;
-        wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
+        if(wanderPoints.Length == 0)
+        {
+            wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
+        }
         DisableWeaponTip();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         Initialize();
+        agent = GetComponent<NavMeshAgent>();
+        if (wanderPoints.Length > 0)
+        {
+            currentState = FSMStates.Patrol;
+            FindNextPoint();
+        }
+        else
+        {
+            currentState = FSMStates.Idle;
+        }
     }
 
     // Update is called once per frame
@@ -88,11 +106,9 @@ public class EnemyAnimBehavior : MonoBehaviour
         }
 
         FaceTarget(nextDestination);
-
-        /*
-        transform.position = Vector3.MoveTowards
-            (transform.position, nextDestination, enemySpeed * Time.deltaTime);*/
-
+        agent.SetDestination(nextDestination);
+        agent.stoppingDistance = 0;
+        agent.speed = patrolSpeed;
     }
     void UpdateChaseState()
     {
@@ -110,11 +126,9 @@ public class EnemyAnimBehavior : MonoBehaviour
         }
 
         FaceTarget(nextDestination);
-
-        /*
-        transform.position = Vector3.MoveTowards
-            (transform.position, nextDestination, enemySpeed * Time.deltaTime);
-        */
+        agent.SetDestination(nextDestination);
+        agent.stoppingDistance = attackDistance;
+        agent.speed = chaseSpeed;
     }
     void UpdateAttackState()
     {
