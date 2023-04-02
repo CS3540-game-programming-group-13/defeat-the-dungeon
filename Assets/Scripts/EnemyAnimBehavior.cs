@@ -21,6 +21,7 @@ public class EnemyAnimBehavior : MonoBehaviour
     public GameObject player;
     public AudioClip goblinDeathSFX;
     public AudioClip goblinStabSFX;
+    public GameObject bloodFX;
     public GameObject weaponTip;
     public static int enemyCount = 0;
     [SerializeField]
@@ -204,9 +205,15 @@ public class EnemyAnimBehavior : MonoBehaviour
         if (other.CompareTag("Sword") && isAlive)
         {
             UpdateDeadState();
+            SpawnBloodFX(other.ClosestPointOnBounds(transform.position));
         }
     }
-    
+
+    private void SpawnBloodFX(Vector3 point)
+    {
+        Instantiate(bloodFX, point, Quaternion.identity);
+    }
+
     public void EnableWeaponTip()
     {
         weaponTip.SetActive(true);

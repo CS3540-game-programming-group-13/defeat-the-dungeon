@@ -531,10 +531,12 @@ MonoBehaviour:
   player: {fileID: 0}
   goblinDeathSFX: {fileID: 8300000, guid: b26927310e4d2d74b8d31e5c3ac2ecb7, type: 3}
   goblinStabSFX: {fileID: 8300000, guid: 050c367fa2c396d42b7399e31f19b26e, type: 3}
+  bloodFX: {fileID: 3809726345785943912, guid: 289a0eed022e9254a93638535061a014, type: 3}
   weaponTip: {fileID: 1725391413}
   patrolSpeed: 1
   chaseSpeed: 3.5
   wanderPoints: []
+  fieldOfView: 75
 --- !u!136 &3257179757800379926
 CapsuleCollider:
   m_ObjectHideFlags: 0
