@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2396196}
   - component: {fileID: 64223756046209130}
   - component: {fileID: 8984500774302614395}
+  - component: {fileID: 8860260143314527622}
+  - component: {fileID: 7350627626206398996}
   m_Layer: 0
   m_Name: SM_Trap_Spears_Grate_01
   m_TagString: Untagged
@@ -107,8 +109,42 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143784}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2, z: 2.5}
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8860260143314527622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fd6d1572713c941a982693b7b2764b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapDamage: 10
+  trapSFX: {fileID: 8300000, guid: e313601748dd80c48a97b7faa1427add, type: 3}
+--- !u!95 &7350627626206398996
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1b9cc7f8fe68bc4394fdf17dee17811, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
