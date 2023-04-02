@@ -43,4 +43,10 @@ public class PlayerStats : MonoBehaviour
         }
         Debug.Log("Health: " + currentHealth);
     }
+    
+    public int CurrentHealth { 
+        get {
+            return this.currentHealth;
+        } 
+    }
 }
