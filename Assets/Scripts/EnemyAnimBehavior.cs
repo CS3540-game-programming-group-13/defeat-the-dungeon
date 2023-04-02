@@ -245,17 +245,8 @@ public class EnemyAnimBehavior : MonoBehaviour
         return false;
     }
 
-    //private void OnDestroy()
-    //{
-    //    enemyCount--;
-    //    if (enemyCount <= 0)
-    //    {
-    //        Debug.Log("You win!");
-    //        LevelManager instance = LevelManager.instance;
-    //        if (instance)
-    //        {
-    //            LevelManager.instance.LevelBeat();
-    //        }
-    //    }
-    //}
+    private void OnDestroy()
+    {
+        enemyCount--;
+    }
 }

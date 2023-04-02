@@ -5,21 +5,10 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour
 {
     public AudioClip doorCreakSFX;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && EnemyAnimBehavior.enemyCount == 0)
         {
             AudioSource.PlayClipAtPoint(doorCreakSFX, transform.position);
             LevelManager instance = LevelManager.instance;

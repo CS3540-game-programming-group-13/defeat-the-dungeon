@@ -7,8 +7,6 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance { get; set; }
 
     [SerializeField]
-    private float levelDuration = 100.0f;
-    [SerializeField]
     private Text gameText;
     [SerializeField]
     private AudioClip gameOverSFX;
@@ -22,29 +20,17 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         isGameOver = false;
-        //countDown = levelDuration;
         if (instance == null)
         {
             instance = this;
         }
     }
 
-    private void Update()
-    {
-        //if(!isGameOver) {
-        //    if(countDown > 0) {
-        //        countDown -= Time.deltaTime;
-        //    }
-        //    else {
-        //        countDown = 0.00f;
-        //        LevelLost();
-        //    }
-        //}
-    }
     public void LevelLost(){
         isGameOver = true;
         gameText.text = "You Died";
         gameText.gameObject.SetActive(true);
+        UIFade.instance.FadeOut(0.25f);
         Invoke("LoadSameLevel", 2);
     }
     
@@ -54,6 +40,7 @@ public class LevelManager : MonoBehaviour
         //gameText.gameObject.SetActive(true);
         if (!string.IsNullOrEmpty(nextLevel))
         {
+            UIFade.instance.FadeOut(0.25f);
             Invoke("LoadNextLevel", 2);
         }
     }
