@@ -88,7 +88,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8243820347600802826, guid: 040d6002e17f40044bcfeddab4a77812, type: 3}
+    - {fileID: 438139963, guid: 040d6002e17f40044bcfeddab4a77812, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 040d6002e17f40044bcfeddab4a77812, type: 3}
 --- !u!4 &3523686700731308873 stripped
 Transform:
@@ -160,6 +162,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5496033977249337308, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+    - {fileID: 2427494124454384849, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+    - {fileID: 6048366606161639910, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
 --- !u!4 &7333453096352236978 stripped
 Transform:

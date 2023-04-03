@@ -11,8 +11,6 @@ public class PlayerInventory : MonoBehaviour
     private int potionCount = 0;
     [SerializeField]
     private Text potionCountText;
-    [SerializeField]
-    private Image potionImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +34,9 @@ public class PlayerInventory : MonoBehaviour
         potionCount++;
         if (potionCount == 1)
         {
-            potionImage.gameObject.SetActive(true);
             potionCountText.gameObject.SetActive(true);
         }
-        potionCountText.text = potionCount.ToString("d");
+        potionCountText.text = "Health Potions: " + potionCount.ToString("d");
     }
 
     void UsePotion()
@@ -49,9 +46,15 @@ public class PlayerInventory : MonoBehaviour
         potionCount--;
         if (potionCount == 0)
         {
-            potionImage.gameObject.SetActive(false);
             potionCountText.gameObject.SetActive(false);
         }
         potionCountText.text = potionCount.ToString("d");
+    }
+
+    public int PotionCount { 
+        get
+        {
+            return potionCount;
+        } 
     }
 }
