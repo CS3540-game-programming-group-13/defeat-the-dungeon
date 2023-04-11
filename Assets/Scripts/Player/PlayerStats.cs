@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats instance { get; set; }
-
     public int startingHealth = 100;
     private int currentHealth = 100;
+    [SerializeField]
+    private int weaponDamage = 50;
     public AudioClip playerHurtSFX;
     public AudioClip playerHealSFX;
     public AudioClip playerDeadSFX;
@@ -48,5 +49,13 @@ public class PlayerStats : MonoBehaviour
         get {
             return this.currentHealth;
         } 
+    }
+
+    public int WeaponDamage
+    {
+        get
+        {
+            return this.weaponDamage;
+        }
     }
 }

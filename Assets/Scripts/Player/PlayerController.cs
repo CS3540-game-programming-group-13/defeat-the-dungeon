@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 10;
+    public float moveSpeed = 10f;
+    public float dashSpeed = 30f;
     public float jumpHeight = 10;
     public float gravity = 9.81f;
-    public float airControl = 5;
+    public float airControl = 5f;
     private float pitch = 0;
     private Vector3 input, moveDirection;
     private CharacterController controller;
@@ -47,6 +49,11 @@ public class PlayerController : MonoBehaviour
             else
             {
                 moveDirection.y = 0.0f;
+            }
+
+            if (Input.GetButtonDown("Dash") && !SceneManager.GetActiveScene().name.Contains("Level1"))
+            {
+                controller.Move(moveDirection * Time.deltaTime * dashSpeed);
             }
         }
         else

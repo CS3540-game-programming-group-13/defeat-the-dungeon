@@ -15,7 +15,8 @@ public class EnemyAnimBehavior : MonoBehaviour
     }
 
     public FSMStates currentState;
-
+    public float maxHealth = 100f;
+    public float currentHealth;
     public float attackDistance = 2;
     public float chaseDistance = 6;
     public GameObject player;
@@ -42,6 +43,7 @@ public class EnemyAnimBehavior : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
         eyes = transform.GetChild(0);
         enemyCount++;
         if(wanderPoints.Length == 0)
@@ -204,8 +206,12 @@ public class EnemyAnimBehavior : MonoBehaviour
     {
         if (other.CompareTag("Sword") && isAlive)
         {
-            UpdateDeadState();
+            currentHealth -= PlayerStats.instance.WeaponDamage;
             SpawnBloodFX(other.ClosestPointOnBounds(transform.position));
+            if (currentHealth <= 0)
+            {
+                UpdateDeadState();
+            }
         }
     }
 
