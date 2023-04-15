@@ -49,7 +49,7 @@ public class PlayerInventory : MonoBehaviour
         {
             potionCountText.gameObject.SetActive(false);
         }
-        potionCountText.text = potionCount.ToString("d");
+        potionCountText.text = "Health Potions: " + potionCount.ToString("d");
     }
 
     public int PotionCount { 

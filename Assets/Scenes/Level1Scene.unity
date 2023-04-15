@@ -4783,7 +4783,6 @@ GameObject:
   - component: {fileID: 391562690}
   - component: {fileID: 391562689}
   - component: {fileID: 391562688}
-  - component: {fileID: 391562693}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -4877,19 +4876,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &391562693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391562687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4518a2068072f7e4697425f1f7e45b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestMenu: {fileID: 1967968830}
 --- !u!1001 &403463830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8906,11 +8892,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
   m_PrefabInstance: {fileID: 1053126450}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1061360241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 162860, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-  m_PrefabInstance: {fileID: 2034417007}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1063737621
 PrefabInstance:
@@ -15790,6 +15771,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7734197962575070255, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
+      propertyPath: chestMenu
+      value: 
+      objectReference: {fileID: 1967968830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
 --- !u!4 &1980792815 stripped
@@ -16998,10 +16983,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0890292
       objectReference: {fileID: 0}
-    - target: {fileID: 85848653, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: swingSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 107b77a9a8dbced4092d34aca9bd4472, type: 3}
     - target: {fileID: 1100991443524794519, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17010,37 +16991,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Sword
       objectReference: {fileID: 0}
-    - target: {fileID: 2623877457270618883, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: weaponDamage
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623877457270618883, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: playerDeadSFX
+    - target: {fileID: 2447314806428966812, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: potionCountText
       value: 
-      objectReference: {fileID: 8300000, guid: 2780b82998479024bb82eba644d4695a, type: 3}
-    - target: {fileID: 2623877457270618883, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: playerHealSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 8f46071f4e6cb774386fee8cd1abc38f, type: 3}
-    - target: {fileID: 2623877457270618883, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: playerHurtSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 6be4fa41a364a7d4ab5d69dd6b836e36, type: 3}
+      objectReference: {fileID: 64916250}
     - target: {fileID: 5411777035907141079, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446575491728743525, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446575491728743525, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446575491728743525, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
-      propertyPath: jumpHeight
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7509223985613254482, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
       propertyPath: m_IsTrigger
@@ -17053,21 +17010,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
   m_PrefabInstance: {fileID: 2034417007}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2034417009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061360241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e244d70e3f140c47a1f63f9f5e1068f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionDrinkSFX: {fileID: 8300000, guid: cfb18281311d3634f8b5ba1de8dfc32e, type: 3}
-  potionCount: 0
-  potionCountText: {fileID: 64916250}
 --- !u!1 &2052659875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 119664, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
@@ -17093,11 +17035,10 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2052659881
+--- !u!114 &2052659882 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7734197962575070255, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
+  m_PrefabInstance: {fileID: 1980792814}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052659875}
   m_Enabled: 1
@@ -17105,10 +17046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b7c3cc4f590304c8b48fa98a597791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  showDistance: 5
-  potionAmount: 3
-  chestOpenSFX: {fileID: 8300000, guid: 407d624bd24f8264f9689c5d1fd1eca2, type: 3}
 --- !u!1001 &2058223397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17325,21 +17262,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1967968830}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 391562693}
-        m_TargetAssemblyTypeName: ChestOpenBehavior, Assembly-CSharp
-        m_MethodName: ChestCollected
+      - m_Target: {fileID: 2052659882}
+        m_TargetAssemblyTypeName: ChestOpen, Assembly-CSharp
+        m_MethodName: Collected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

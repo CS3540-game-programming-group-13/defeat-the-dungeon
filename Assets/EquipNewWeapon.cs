@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EquipNewWeapon : MonoBehaviour
 {
+    public int damage;
+    public GameObject weapon;
+
     public void OnButtonClick()
     {
-        PlayerStats.instance.WeaponDamage = 50;
+        PlayerStats.instance.WeaponDamage = damage;
+        SwordItemBehavior.instance.SetSword(weapon);
     }
 }

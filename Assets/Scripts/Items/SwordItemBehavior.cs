@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwordItemBehavior : MonoBehaviour
 {
+    public static SwordItemBehavior instance { get; set; }
     private Animator animator;
     [SerializeField]
     private BoxCollider sword;
@@ -13,7 +14,8 @@ public class SwordItemBehavior : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        if(sword == null)
+        instance = this;
+        if (sword == null)
         {
             sword = GameObject.FindGameObjectWithTag("Sword").GetComponent<BoxCollider>();
         }
@@ -26,6 +28,11 @@ public class SwordItemBehavior : MonoBehaviour
             animator.SetTrigger("playerSlash");
             AudioSource.PlayClipAtPoint(swingSFX, transform.position);
         }
+    }
+
+    public void SetSword(GameObject newSword)
+    {
+        sword = newSword.GetComponent<BoxCollider>();
     }
 
     public void DisableSwordCollider()

@@ -14,6 +14,7 @@ public class ChestOpen : MonoBehaviour
 
     private bool isOpen = false;
     private Animator anim;
+    public GameObject chestMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,29 @@ public class ChestOpen : MonoBehaviour
             anim.SetBool("chestOpened", isOpen);
 
             AudioSource.PlayClipAtPoint(chestOpenSFX, Camera.main.transform.position);
-            PlayerInventory.instance.potionCount = potionAmount - 1;
-            PlayerInventory.instance.AddPotion();
+            OpenChestMenu();
         }
+    }
+    public void OpenChestMenu()
+    {
+        Time.timeScale = 0f;
+        chestMenu.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void CloseChestMenu()
+    {
+        Time.timeScale = 1f;
+        chestMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Collected()
+    {
+        PlayerInventory.instance.potionCount = potionAmount - 1;
+        PlayerInventory.instance.AddPotion();
+        CloseChestMenu();
     }
 }

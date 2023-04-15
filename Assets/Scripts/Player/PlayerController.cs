@@ -50,11 +50,6 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y = 0.0f;
             }
-
-            if (Input.GetButtonDown("Dash") && !SceneManager.GetActiveScene().name.Contains("Level1"))
-            {
-                controller.Move(moveDirection * Time.deltaTime * dashSpeed);
-            }
         }
         else
         {
