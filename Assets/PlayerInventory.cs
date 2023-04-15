@@ -8,18 +8,25 @@ public class PlayerInventory : MonoBehaviour
     public static PlayerInventory instance { get; set; }
 
     public AudioClip potionDrinkSFX;
-    public int potionCount = 0;
+    public static int potionCount = 0;
     [SerializeField]
     private Text potionCountText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if(instance != this)
+        {
+            Destroy(gameObject);
+            return;
         }
     }
+
 
     // Update is called once per frame
     void Update()
@@ -30,14 +37,14 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void AddPotion()
+    public void AddPotion(int numPotions)
     {
-        potionCount++;
+        potionCount+= numPotions;
         if (potionCount == 1)
         {
             potionCountText.gameObject.SetActive(true);
         }
-        potionCountText.text = "Health Potions: " + potionCount.ToString("d");
+        UpdatePotionCounter();
     }
 
     void UsePotion()
@@ -49,6 +56,11 @@ public class PlayerInventory : MonoBehaviour
         {
             potionCountText.gameObject.SetActive(false);
         }
+        UpdatePotionCounter();
+    }
+
+    void UpdatePotionCounter()
+    {
         potionCountText.text = "Health Potions: " + potionCount.ToString("d");
     }
 
@@ -57,5 +69,12 @@ public class PlayerInventory : MonoBehaviour
         {
             return potionCount;
         } 
+    }
+
+    public void UpdateCounterTextComponent()
+    {
+        potionCountText = GameObject.FindGameObjectWithTag("PotionCounter").GetComponent<Text>();
+        Debug.Log("Updating: " + potionCountText);
+        UpdatePotionCounter();
     }
 }

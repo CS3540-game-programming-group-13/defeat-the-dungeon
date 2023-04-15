@@ -1890,7 +1890,7 @@ GameObject:
   - component: {fileID: 64916250}
   m_Layer: 5
   m_Name: PotionCount
-  m_TagString: Untagged
+  m_TagString: PotionCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7140,7 +7140,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 3 Potions
+  m_Text: 2 Potions
 --- !u!222 &776963885
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8038,6 +8038,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 460624, guid: f5bef9e1bbbbe9f4a89a3c958ad516c7, type: 3}
   m_PrefabInstance: {fileID: 918547137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &922996587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6587862562431709728, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: potionCountText
+      value: 
+      objectReference: {fileID: 64916250}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1943636
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.2124043
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.972504
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709729, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587862562431709743, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
+      propertyPath: m_Name
+      value: Inventory
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77cbf12d89e7ade4498119af4b444937, type: 3}
 --- !u!1001 &936866894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15775,6 +15836,10 @@ PrefabInstance:
       propertyPath: chestMenu
       value: 
       objectReference: {fileID: 1967968830}
+    - target: {fileID: 7734197962575070255, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
+      propertyPath: potionAmount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
 --- !u!4 &1980792815 stripped
@@ -17003,7 +17068,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2447314806428966812, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
 --- !u!4 &2034417008 stripped
 Transform:

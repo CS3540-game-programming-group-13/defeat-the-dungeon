@@ -56,8 +56,7 @@ public class ChestOpen : MonoBehaviour
 
     public void Collected()
     {
-        PlayerInventory.instance.potionCount = potionAmount - 1;
-        PlayerInventory.instance.AddPotion();
+        PlayerInventory.instance.AddPotion(potionAmount);
         CloseChestMenu();
     }
 }

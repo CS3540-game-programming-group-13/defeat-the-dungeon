@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        PlayerInventory.instance.UpdateCounterTextComponent();
     }
 
     void Update()

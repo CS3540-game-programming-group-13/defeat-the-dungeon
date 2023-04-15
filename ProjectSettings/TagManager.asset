@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - WanderPoint
   - EnemyWeapon
+  - PotionCounter
   layers:
   - Default
   - TransparentFX
