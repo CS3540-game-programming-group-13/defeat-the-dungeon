@@ -8,7 +8,8 @@ public class PlayerStats : MonoBehaviour
     public int startingHealth = 100;
     private int currentHealth = 100;
     [SerializeField]
-    private int weaponDamage = 50;
+    private int weaponDamage = 15;
+    public int newWeaponDamage = 50;
     public AudioClip playerHurtSFX;
     public AudioClip playerHealSFX;
     public AudioClip playerDeadSFX;
@@ -57,5 +58,15 @@ public class PlayerStats : MonoBehaviour
         {
             return this.weaponDamage;
         }
+        set
+        {
+            this.weaponDamage = value;
+        }
+    }
+
+    public void UpdateDamage(int newDamage)
+    {
+        Debug.Log("Updating new weapon damage to " + newDamage);
+        weaponDamage = newDamage;
     }
 }

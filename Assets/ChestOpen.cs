@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChestOpen : MonoBehaviour
 {
     public GameObject player;
     public float showDistance = float.MaxValue;
-    public GameObject potionPrefab;
+
+    public int potionAmount;
 
     public AudioClip chestOpenSFX;
 
@@ -32,12 +34,8 @@ public class ChestOpen : MonoBehaviour
             anim.SetBool("chestOpened", isOpen);
 
             AudioSource.PlayClipAtPoint(chestOpenSFX, Camera.main.transform.position);
-
-            for(int i = 0; i < 3; i++)
-            {
-                Vector3 offset = new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 2f), 0f);
-                GameObject potion = Instantiate(potionPrefab, transform.position + offset, Quaternion.identity);
-            }
+            PlayerInventory.instance.potionCount = potionAmount - 1;
+            PlayerInventory.instance.AddPotion();
         }
     }
 }

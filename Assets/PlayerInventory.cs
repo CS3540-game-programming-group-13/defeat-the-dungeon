@@ -8,9 +8,10 @@ public class PlayerInventory : MonoBehaviour
     public static PlayerInventory instance { get; set; }
 
     public AudioClip potionDrinkSFX;
-    private int potionCount = 0;
+    public int potionCount = 0;
     [SerializeField]
     private Text potionCountText;
+
     // Start is called before the first frame update
     void Start()
     {
