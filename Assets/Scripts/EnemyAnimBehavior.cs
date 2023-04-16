@@ -24,12 +24,12 @@ public class EnemyAnimBehavior : MonoBehaviour
     public AudioClip goblinStabSFX;
     public GameObject bloodFX;
     public GameObject weaponTip;
+    private MeshCollider weaponTipCollider;
     public static int enemyCount = 0;
     [SerializeField]
     private float patrolSpeed = 1f;
     [SerializeField]
     private float chaseSpeed = 3.5f;
-    [SerializeField]
     GameObject[] wanderPoints;
     Vector3 nextDestination;
     private NavMeshAgent agent;
@@ -46,10 +46,8 @@ public class EnemyAnimBehavior : MonoBehaviour
         currentHealth = maxHealth;
         eyes = transform.GetChild(0);
         enemyCount++;
-        if(wanderPoints.Length == 0)
-        {
-            wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
-        }
+        wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
+        weaponTipCollider = weaponTip.GetComponent<MeshCollider>();
         DisableWeaponTip();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -222,12 +220,12 @@ public class EnemyAnimBehavior : MonoBehaviour
 
     public void EnableWeaponTip()
     {
-        weaponTip.SetActive(true);
+        weaponTipCollider.enabled = true;
     }
 
     public void DisableWeaponTip()
     {
-        weaponTip.SetActive(false);
+        weaponTipCollider.enabled = false;
     }
 
     private bool IsPlayerInClearFOV()

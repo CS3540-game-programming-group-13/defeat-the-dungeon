@@ -23,7 +23,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && shouldApplyDamage)
+        if (other.CompareTag("Player") && shouldApplyDamage && !ShieldItemBehavior.IsBlocking)
         {
             other.GetComponent<PlayerStats>().TakeDamage(damage);
             shouldApplyDamage = false;
