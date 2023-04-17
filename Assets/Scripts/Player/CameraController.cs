@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        mouseSensitivity = PlayerSaveDataManager.instance.playerData.MouseSensitivity;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         offset = player.position - transform.position;
     }
