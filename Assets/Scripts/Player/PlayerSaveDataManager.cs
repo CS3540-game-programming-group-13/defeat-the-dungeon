@@ -11,15 +11,11 @@ public class PlayerSaveDataManager : MonoBehaviour
     public struct PlayerSaveData
     {
         public int RawPlayTimeSeconds;
-        public int PlayTimeHour;
-        public int PlayTimeMinute;
-        public int PlayTimeSecond;
         public float MouseSensitivity;
     }
 
     public static PlayerSaveDataManager instance { get; set; }
     public PlayerSaveData playerData;
-    private bool shouldRecordTime = false;
     private const string saveFilePath = "./Assets/Data/player_data.json";
 
     private void Start()
@@ -43,13 +39,16 @@ public class PlayerSaveDataManager : MonoBehaviour
         else
         {
             playerData = new PlayerSaveData();
-            playerData.PlayTimeHour = 0;
-            playerData.PlayTimeMinute = 0;
-            playerData.PlayTimeSecond = 0;
+            playerData.RawPlayTimeSeconds = 0;
             playerData.MouseSensitivity = 100;
             SavePlayerData();
         }
         StartCoroutine(RecordTimeRoutine());
+    }
+
+    public void SetMouseSensitivity(float newSensitivity)
+    {
+        playerData.MouseSensitivity = newSensitivity;
     }
 
     public void SavePlayerData()
@@ -61,11 +60,6 @@ public class PlayerSaveDataManager : MonoBehaviour
     {
         string fileContents = File.ReadAllText(saveFilePath);
         playerData = JsonUtility.FromJson<PlayerSaveData>(fileContents);
-    }
-
-    private void Awake()
-    {
-        shouldRecordTime = !SceneManager.GetActiveScene().name.ToLower().Contains("menu");
     }
 
     private void ChangedActiveScene(Scene current, Scene next)
@@ -84,14 +78,7 @@ public class PlayerSaveDataManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (shouldRecordTime)
-            {
-                playerData.RawPlayTimeSeconds += 1;
-                ts = TimeSpan.FromSeconds(playerData.RawPlayTimeSeconds);
-                playerData.PlayTimeHour = (int)ts.TotalHours;
-                playerData.PlayTimeMinute = ts.Minutes;
-                playerData.PlayTimeSecond = ts.Seconds;
-            }
+            playerData.RawPlayTimeSeconds += 1;
         }
     }
 
