@@ -13358,6 +13358,7 @@ MonoBehaviour:
   dialogue:
     instructions:
     - Let's finish this tutorial. Defeat that goblin with your sword!
+    - Hold Right Click to block incoming attacks!
   dialogueText: {fileID: 1962094515}
 --- !u!1001 &1545418172
 PrefabInstance:
@@ -15271,6 +15272,11 @@ BoxCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4623091405616773976, guid: 86d8d4388a165e548b33c4a413fde2f4, type: 3}
   m_PrefabInstance: {fileID: 411519154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1789678532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162860, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+  m_PrefabInstance: {fileID: 2034417007}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1819088018
 PrefabInstance:
@@ -18952,6 +18958,34 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.10745592
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.09040743
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.96431243
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2244576
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -26.893
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -190.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429598023288498278, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -8.13
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2447314806428966812, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
@@ -18960,6 +18994,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 487758, guid: 880858dfd9b1e784e89d45242bf78d2b, type: 3}
   m_PrefabInstance: {fileID: 2034417007}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2034417015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789678532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748c72bf840b8ec4a9e39557518b8548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2045565013
 PrefabInstance:
   m_ObjectHideFlags: 0

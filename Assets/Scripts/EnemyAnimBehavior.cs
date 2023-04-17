@@ -210,6 +210,10 @@ public class EnemyAnimBehavior : MonoBehaviour
             {
                 UpdateDeadState();
             }
+            else
+            {
+                UpdateChaseState();
+            }
         }
     }
 
