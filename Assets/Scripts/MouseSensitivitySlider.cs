@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class MouseSensitivitySlider : MonoBehaviour
 {
 	private Slider mainSlider;
+	[SerializeField]
+	private Text sensitivityText;
 
 	public void Start()
 	{
@@ -17,5 +19,6 @@ public class MouseSensitivitySlider : MonoBehaviour
 	public void ValueChangeCheck()
 	{
 		PlayerSaveDataManager.instance.SetMouseSensitivity(mainSlider.value);
+		sensitivityText.text = mainSlider.value.ToString();
 	}
 }

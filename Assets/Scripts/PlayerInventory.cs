@@ -40,10 +40,6 @@ public class PlayerInventory : MonoBehaviour
     public void AddPotion(int numPotions)
     {
         potionCount+= numPotions;
-        if (potionCount == 1)
-        {
-            potionCountText.gameObject.SetActive(true);
-        }
         UpdatePotionCounter();
     }
 
@@ -52,16 +48,12 @@ public class PlayerInventory : MonoBehaviour
         PlayerStats.instance.Heal(20);
         AudioSource.PlayClipAtPoint(potionDrinkSFX, Camera.main.transform.position);
         potionCount--;
-        if (potionCount == 0)
-        {
-            potionCountText.gameObject.SetActive(false);
-        }
         UpdatePotionCounter();
     }
 
     void UpdatePotionCounter()
     {
-        potionCountText.text = "Health Potions: " + potionCount.ToString("d");
+        potionCountText.text = potionCount.ToString();
     }
 
     public int PotionCount { 
